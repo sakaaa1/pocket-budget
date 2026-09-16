@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Pocket Budget">
+  <meta name="format-detection" content="telephone=no">
+  <title>Pocket Budget</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div><small>OFFLINE BUDGET</small><h1>Pocket Budget</h1></div>
+  <span id="saveState" class="status">Saved locally</span>
+</header>
+<main>
+<section id="iosTip" class="installTip" hidden><b>Install on iPhone</b><span>In Safari, tap Share → Add to Home Screen → Add.</span><button id="dismissTip">Got it</button></section>
+<section class="hero"><div><span>Weekly allowance</span><strong id="allowance">₱2,500</strong></div><div><span>Remaining</span><strong id="remaining">₱2,500</strong></div></section>
+<section><div class="sectionTitle"><h2>This week</h2><button id="resetWeek">Reset actuals</button></div><div id="cards" class="grid"></div></section>
+<section class="panel"><h2>Add transaction</h2><form id="txForm"><label>Category<select id="category"></select></label><label>Amount<input id="amount" type="number" min="0" step="0.01" inputmode="decimal" placeholder="0.00" required></label><label>Description<input id="description" maxlength="80" placeholder="e.g. Lunch, café date, laundry"></label><button class="primary" type="submit">Save transaction</button></form></section>
+<section class="panel"><div class="sectionTitle"><h2>Recent activity</h2><button id="clearTx">Clear</button></div><div id="transactions" class="transactions"></div></section>
+<section class="panel"><h2>Backup & transfer</h2><p>Your budget data stays in this browser on this device. Export a backup before clearing Safari data or moving phones.</p><div class="actions"><button id="exportBtn">Export backup</button><label class="fileBtn">Import backup<input id="importFile" type="file" accept="application/json,.json"></label></div><p class="hint">Automatic cross-device syncing needs an online service. This version stays private and offline-first.</p></section>
+<section class="panel"><h2>Offline status</h2><p id="offlineStatus">Checking offline readiness…</p><button id="testOffline">Check cached app</button></section>
+</main>
+<footer>Stored locally • No account • Offline after first successful load</footer>
+<script src="app.js"></script>
+</body></html>
